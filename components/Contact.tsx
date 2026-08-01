@@ -78,13 +78,22 @@ export default function Contact() {
                 <div className="mt-12 rounded-[2rem] border border-white/10 bg-black/10 p-6">
                   <p className="text-sm text-white/45">Vous pouvez aussi écrire à</p>
                   <a
-                    href="mailto:contact@localflow.fr"
+                    href="mailto:artyouness4@gmail.com"
                     className="mt-2 inline-block text-lg font-semibold text-emerald-400 hover:text-emerald-300"
                   >
-                    contact@localflow.fr
+                    artyouness4@gmail.com
                   </a>
                 </div>
               </div>
+            </div>
+            <div className="mt-5">
+               <  p className="text-sm text-white/45">Téléphone</p>
+                 <a
+                     href="tel:+33773586324"
+                    className="mt-2 inline-block text-lg font-semibold text-emerald-400 hover:text-emerald-300"
+                  >
+                +33 7 73 58 63 24
+                 </a>
             </div>
 
             <div className="p-8 sm:p-12">
