@@ -7,7 +7,6 @@ const projects = [
     features: ["Menu en ligne", "Réservation", "Google Maps"],
     visual: "from-red-950 via-red-700 to-orange-300",
     href: "/demo/restaurant",
-    cta: "Voir la démo restaurant",
   },
   {
     category: "Salon de coiffure",
@@ -17,17 +16,15 @@ const projects = [
     features: ["Prestations", "Rendez-vous", "Galerie"],
     visual: "from-fuchsia-950 via-violet-700 to-pink-300",
     href: "/demo/coiffeur",
-    cta: "Voir la démo coiffeur",
   },
   {
     category: "Café",
     title: "Coffee Corner",
     description:
       "Une présence en ligne simple pour présenter les boissons, les horaires et l’ambiance.",
-    features: ["Carte des boissons", "Horaires", "Réseaux sociaux"],
+    features: ["Carte", "Horaires", "Réseaux sociaux"],
     visual: "from-amber-950 via-yellow-800 to-orange-300",
     href: "/demo/cafe",
-    cta: "Voir la démo café",
   },
 ];
 
@@ -45,32 +42,28 @@ export default function Portfolio() {
             </p>
 
             <h2 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-              Découvrez des sites adaptés à différents commerces
+              Découvrez nos démonstrations
             </h2>
           </div>
 
           <p className="max-w-xl text-lg leading-8 text-white/60">
-            Explorez trois exemples complets que nous pouvons personnaliser avec
-            vos textes, vos couleurs, vos photos et vos coordonnées.
+            Cliquez sur un modèle pour découvrir un exemple complet de site web.
           </p>
         </div>
 
         <div className="mt-16 grid gap-8 lg:grid-cols-3">
           {projects.map((project) => (
-            <article
+            <a
               key={project.title}
-              className="group overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] transition duration-300 hover:-translate-y-1 hover:border-emerald-400/40"
+              href={project.href}
+              className="group overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] transition duration-300 hover:-translate-y-2 hover:border-emerald-400/40"
             >
-              <a
-                href={project.href}
-                aria-label={`Ouvrir la démo ${project.title}`}
-                className="block p-4"
-              >
+              <div className="p-4">
                 <div
                   className={`relative min-h-[330px] overflow-hidden rounded-[1.5rem] bg-gradient-to-br ${project.visual}`}
                 >
                   <div className="absolute inset-x-5 top-5 flex items-center justify-between rounded-full border border-white/20 bg-black/20 px-4 py-3 backdrop-blur">
-                    <span className="text-sm font-semibold text-white">
+                    <span className="font-semibold text-white">
                       {project.title}
                     </span>
 
@@ -79,72 +72,48 @@ export default function Portfolio() {
                     </span>
                   </div>
 
-                  <div className="absolute inset-x-6 bottom-6 rounded-[1.5rem] border border-white/20 bg-black/30 p-5 backdrop-blur-md">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-                      Démo complète
+                  <div className="absolute inset-x-6 bottom-6 rounded-[1.5rem] border border-white/20 bg-black/30 p-5 backdrop-blur">
+                    <p className="text-xs uppercase tracking-[0.2em] text-white/70">
+                      Démonstration
                     </p>
 
                     <p className="mt-2 text-2xl font-bold text-white">
-                      Un site moderne et prêt à être personnalisé
+                      Cliquez pour visiter
                     </p>
-
-                    <span className="mt-5 inline-flex rounded-full bg-white px-4 py-2 text-sm font-semibold text-black">
-                      Ouvrir la démo
-                    </span>
                   </div>
                 </div>
-              </a>
+              </div>
 
-              <div className="px-7 pb-8 pt-3">
+              <div className="px-7 pb-8">
                 <p className="text-sm font-semibold text-emerald-400">
                   {project.category}
                 </p>
 
-                <h3 className="mt-2 text-2xl font-semibold">
+                <h3 className="mt-2 text-2xl font-semibold text-white">
                   {project.title}
                 </h3>
 
-                <p className="mt-4 leading-7 text-white/55">
+                <p className="mt-4 text-white/55">
                   {project.description}
                 </p>
 
-                <ul className="mt-6 flex flex-wrap gap-2">
+                <ul className="mt-5 flex flex-wrap gap-2">
                   {project.features.map((feature) => (
                     <li
                       key={feature}
-                      className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-xs text-white/65"
+                      className="rounded-full border border-white/10 px-3 py-2 text-xs text-white/60"
                     >
                       {feature}
                     </li>
                   ))}
                 </ul>
 
-                <a
-                  href={project.href}
-                  className="mt-7 inline-flex items-center gap-2 font-semibold text-white transition group-hover:text-emerald-400"
-                >
-                  {project.cta}
-                  <span className="transition group-hover:translate-x-1">
-                    →
-                  </span>
-                </a>
+                <div className="mt-7 font-semibold text-emerald-400">
+                  Voir la démo →
+                </div>
               </div>
-            </article>
+            </a>
           ))}
-        </div>
-
-        <div className="mt-12 flex flex-col items-center gap-5 text-center">
-          <p className="max-w-3xl text-sm leading-6 text-white/40">
-            Ces noms, coordonnées et contenus sont fictifs. Ils servent
-            uniquement à présenter les types de sites proposés par LocalFlow.
-          </p>
-
-          <a
-            href="#contact"
-            className="rounded-full border border-white/15 px-7 py-4 font-semibold transition hover:border-emerald-400/40 hover:bg-white/5"
-          >
-            Demander la personnalisation d’un modèle
-          </a>
         </div>
       </div>
     </section>
