@@ -98,9 +98,11 @@ export default function Navbar() {
             >
               Demander un devis
             </a>
+            <a href="/avis">Avis</a>
           </nav>
         </div>
       )}
     </header>
+    
   );
 }
