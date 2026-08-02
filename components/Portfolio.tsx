@@ -106,7 +106,7 @@ export default function Portfolio() {
                 </ul>
 
                 <a
-                  href="#contact"
+                  href="/demo/restaurant"
                   className="mt-7 inline-flex items-center gap-2 font-semibold text-white transition group-hover:text-emerald-400"
                 >
                   Créer un site similaire
