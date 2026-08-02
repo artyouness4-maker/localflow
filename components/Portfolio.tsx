@@ -1,30 +1,27 @@
 const projects = [
   {
-    category: "Restaurant",
-    title: "Bella Vita",
+    category: "Restaurant italien",
+    title: "Bella Napoli",
     description:
-      "Une landing page élégante pour présenter le menu, l’ambiance et faciliter les réservations.",
-    features: ["Menu en ligne", "Réservation", "Version mobile"],
-    visual:
-      "from-red-950 via-red-700 to-orange-300",
+      "Un site chaleureux avec menu, réservation, galerie photo et localisation.",
+    features: ["Menu en ligne", "Réservation", "Google Maps"],
+    visual: "from-red-950 via-red-700 to-orange-300",
   },
   {
-    category: "Spa & bien-être",
-    title: "Élégance Spa",
+    category: "Salon de coiffure",
+    title: "Studio Élégance",
     description:
-      "Un site calme et premium pour mettre en valeur les soins, les tarifs et la prise de rendez-vous.",
-    features: ["Catalogue de soins", "Prise de rendez-vous", "Avis clients"],
-    visual:
-      "from-emerald-950 via-emerald-700 to-stone-300",
+      "Un site moderne avec prestations, tarifs, galerie et prise de rendez-vous.",
+    features: ["Prestations", "Rendez-vous", "Galerie"],
+    visual: "from-fuchsia-950 via-violet-700 to-pink-300",
   },
   {
-    category: "Artisan",
-    title: "Maison Dupont",
+    category: "Café",
+    title: "Coffee Corner",
     description:
-      "Un site chaleureux pour présenter le savoir-faire, les réalisations et recevoir des demandes de devis.",
-    features: ["Galerie de projets", "Présentation du métier", "Formulaire de devis"],
-    visual:
-      "from-amber-950 via-amber-700 to-yellow-300",
+      "Une présence en ligne simple pour présenter les boissons, les horaires et l’ambiance.",
+    features: ["Carte des boissons", "Horaires", "Réseaux sociaux"],
+    visual: "from-amber-950 via-yellow-800 to-orange-300",
   },
 ];
 
@@ -38,17 +35,17 @@ export default function Portfolio() {
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-400">
-              Nos réalisations
+              Exemples de designs
             </p>
 
             <h2 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-              Des exemples conçus pour convaincre vos futurs clients
+              Des modèles adaptés à différents commerces
             </h2>
           </div>
 
           <p className="max-w-xl text-lg leading-8 text-white/60">
-            Chaque projet est pensé pour refléter l’identité du commerce,
-            rassurer les visiteurs et les guider vers une action claire.
+            Ces exemples illustrent le style de sites que nous pouvons créer et
+            personnaliser selon votre activité, vos couleurs et vos besoins.
           </p>
         </div>
 
@@ -58,7 +55,7 @@ export default function Portfolio() {
               key={project.title}
               className="group overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] transition duration-300 hover:-translate-y-1 hover:border-emerald-400/40"
             >
-              <div className="relative p-4">
+              <div className="p-4">
                 <div
                   className={`relative min-h-[330px] overflow-hidden rounded-[1.5rem] bg-gradient-to-br ${project.visual}`}
                 >
@@ -67,19 +64,19 @@ export default function Portfolio() {
                       {project.title}
                     </span>
 
-                    <span className="text-xs text-white/70">Menu</span>
+                    <span className="text-xs text-white/70">
+                      {project.category}
+                    </span>
                   </div>
 
                   <div className="absolute inset-x-6 bottom-6 rounded-[1.5rem] border border-white/20 bg-black/30 p-5 backdrop-blur-md">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-                      {project.category}
+                      Exemple de design
                     </p>
 
                     <p className="mt-2 text-2xl font-bold text-white">
-                      Une présence en ligne moderne
+                      Un site moderne et prêt à être personnalisé
                     </p>
-
-                    <div className="mt-4 h-2 w-24 rounded-full bg-white/50" />
                   </div>
                 </div>
               </div>
@@ -112,22 +109,20 @@ export default function Portfolio() {
                   href="#contact"
                   className="mt-7 inline-flex items-center gap-2 font-semibold text-white transition group-hover:text-emerald-400"
                 >
-                  Découvrir le projet
-                  <span className="transition group-hover:translate-x-1">→</span>
+                  Créer un site similaire
+                  <span className="transition group-hover:translate-x-1">
+                    →
+                  </span>
                 </a>
               </div>
             </article>
           ))}
         </div>
 
-        <div className="mt-14 flex justify-center">
-          <a
-            href="#contact"
-            className="rounded-full border border-white/15 px-7 py-4 font-semibold transition hover:border-emerald-400/40 hover:bg-white/5"
-          >
-            Discuter de votre projet
-          </a>
-        </div>
+        <p className="mx-auto mt-10 max-w-3xl text-center text-sm leading-6 text-white/40">
+          Les noms et contenus présentés sont des exemples fictifs utilisés pour
+          illustrer les types de sites proposés par LocalFlow.
+        </p>
       </div>
     </section>
   );
