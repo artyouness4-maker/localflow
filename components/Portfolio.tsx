@@ -6,6 +6,8 @@ const projects = [
       "Un site chaleureux avec menu, réservation, galerie photo et localisation.",
     features: ["Menu en ligne", "Réservation", "Google Maps"],
     visual: "from-red-950 via-red-700 to-orange-300",
+    href: "/demo/restaurant",
+    cta: "Voir la démo restaurant",
   },
   {
     category: "Salon de coiffure",
@@ -14,6 +16,8 @@ const projects = [
       "Un site moderne avec prestations, tarifs, galerie et prise de rendez-vous.",
     features: ["Prestations", "Rendez-vous", "Galerie"],
     visual: "from-fuchsia-950 via-violet-700 to-pink-300",
+    href: "/demo/coiffeur",
+    cta: "Voir la démo coiffeur",
   },
   {
     category: "Café",
@@ -22,6 +26,8 @@ const projects = [
       "Une présence en ligne simple pour présenter les boissons, les horaires et l’ambiance.",
     features: ["Carte des boissons", "Horaires", "Réseaux sociaux"],
     visual: "from-amber-950 via-yellow-800 to-orange-300",
+    href: "/demo/cafe",
+    cta: "Voir la démo café",
   },
 ];
 
@@ -39,13 +45,13 @@ export default function Portfolio() {
             </p>
 
             <h2 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-              Des modèles adaptés à différents commerces
+              Découvrez des sites adaptés à différents commerces
             </h2>
           </div>
 
           <p className="max-w-xl text-lg leading-8 text-white/60">
-            Ces exemples illustrent le style de sites que nous pouvons créer et
-            personnaliser selon votre activité, vos couleurs et vos besoins.
+            Explorez trois exemples complets que nous pouvons personnaliser avec
+            vos textes, vos couleurs, vos photos et vos coordonnées.
           </p>
         </div>
 
@@ -55,7 +61,11 @@ export default function Portfolio() {
               key={project.title}
               className="group overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] transition duration-300 hover:-translate-y-1 hover:border-emerald-400/40"
             >
-              <div className="p-4">
+              <a
+                href={project.href}
+                aria-label={`Ouvrir la démo ${project.title}`}
+                className="block p-4"
+              >
                 <div
                   className={`relative min-h-[330px] overflow-hidden rounded-[1.5rem] bg-gradient-to-br ${project.visual}`}
                 >
@@ -71,15 +81,19 @@ export default function Portfolio() {
 
                   <div className="absolute inset-x-6 bottom-6 rounded-[1.5rem] border border-white/20 bg-black/30 p-5 backdrop-blur-md">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-                      Exemple de design
+                      Démo complète
                     </p>
 
                     <p className="mt-2 text-2xl font-bold text-white">
                       Un site moderne et prêt à être personnalisé
                     </p>
+
+                    <span className="mt-5 inline-flex rounded-full bg-white px-4 py-2 text-sm font-semibold text-black">
+                      Ouvrir la démo
+                    </span>
                   </div>
                 </div>
-              </div>
+              </a>
 
               <div className="px-7 pb-8 pt-3">
                 <p className="text-sm font-semibold text-emerald-400">
@@ -106,10 +120,10 @@ export default function Portfolio() {
                 </ul>
 
                 <a
-                  href="/demo/restaurant"
+                  href={project.href}
                   className="mt-7 inline-flex items-center gap-2 font-semibold text-white transition group-hover:text-emerald-400"
                 >
-                  Créer un site similaire
+                  {project.cta}
                   <span className="transition group-hover:translate-x-1">
                     →
                   </span>
@@ -119,10 +133,19 @@ export default function Portfolio() {
           ))}
         </div>
 
-        <p className="mx-auto mt-10 max-w-3xl text-center text-sm leading-6 text-white/40">
-          Les noms et contenus présentés sont des exemples fictifs utilisés pour
-          illustrer les types de sites proposés par LocalFlow.
-        </p>
+        <div className="mt-12 flex flex-col items-center gap-5 text-center">
+          <p className="max-w-3xl text-sm leading-6 text-white/40">
+            Ces noms, coordonnées et contenus sont fictifs. Ils servent
+            uniquement à présenter les types de sites proposés par LocalFlow.
+          </p>
+
+          <a
+            href="#contact"
+            className="rounded-full border border-white/15 px-7 py-4 font-semibold transition hover:border-emerald-400/40 hover:bg-white/5"
+          >
+            Demander la personnalisation d’un modèle
+          </a>
+        </div>
       </div>
     </section>
   );
